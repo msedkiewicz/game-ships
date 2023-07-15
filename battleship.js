@@ -22,6 +22,7 @@ while (isSunk === false) {
 
         /* checking if ship was hit */
         if ( guess == location1 || guess == location2 || guess == location3) {
+            alert("Trafiony!");
             hits = hits + 1;
 
             /* checking if ship was sunk or if game is still on */
@@ -29,6 +30,8 @@ while (isSunk === false) {
                 isSunk = true;
                 alert("Zatopiłeś mój okręt!");
             }
+        } else {
+            alert("Pudło!")
         }
     }
 }
