@@ -10,7 +10,7 @@ let guesses = 0;
 
 let isSunk = false;
 
-/* checking if ship was sunk or if game is still on */
+/* Shoot checking code */
 
 while (isSunk === false) {
     guess = prompt("Gotów? Cel, pal! (Podaj liczbę z zakresu od 0 do 6):");
@@ -23,6 +23,15 @@ while (isSunk === false) {
         /* checking if ship was hit */
         if ( guess == location1 || guess == location2 || guess == location3) {
             hits = hits + 1;
+
+            /* checking if ship was sunk or if game is still on */
+            if (hits == 3) {
+                isSunk = true;
+                alert("Zatopiłeś mój okręt!");
+            }
         }
     }
 }
+
+const stats = "Potrzebowałeś " + guesses + " prób, by zatopić okręt, czyli Twoja efektywność wynosi: " + (3/guesses) + ".";
+alert(stats);
